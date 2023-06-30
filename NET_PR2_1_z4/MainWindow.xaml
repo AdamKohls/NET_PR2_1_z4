@@ -1,0 +1,105 @@
+﻿<Window x:Class="NET_PR2_1_z4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NET_PR2_1_z4"
+        mc:Ignorable="d"
+        
+        Title="Kalkulator"
+        Height="550"
+        Width="355"
+        FontSize="28"
+        >
+    <StackPanel>
+        <TextBlock
+            FontSize="16"
+            TextAlignment="Right"
+            Margin="0,0,5,0"
+            Text="{Binding Path=Działanie}"
+            />
+        <TextBlock
+            TextAlignment="Right"
+            Margin="0,0,5,0"
+            Text="{Binding Path=Wynik}"
+            />
+        <StackPanel
+            Style="{DynamicResource Wiersz}"
+            >
+            <Button Background="AliceBlue">%</Button>
+            <Button Click="CzyszczenieWprowadzenia">CE</Button>
+            <Button Click="Czyszczenie">C</Button>
+            <Button Click="KasowanieZnaku">⌫</Button>
+        </StackPanel>
+        <StackPanel
+            Style="{DynamicResource Wiersz}"
+            >
+            <Button></Button>
+            <Button></Button>
+            <Button></Button>
+            <Button>/</Button>
+        </StackPanel>
+        <StackPanel
+            Style="{DynamicResource Wiersz}"
+            >
+            <Button
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >7</Button>
+            <Button
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >8</Button>
+            <Button
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >9</Button>
+            <Button>*</Button>
+        </StackPanel>
+        <StackPanel
+            Style="{DynamicResource Wiersz}"
+            >
+            <Button
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >4</Button>
+            <Button
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >5</Button>
+            <Button
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >6</Button>
+            <Button>-</Button>
+        </StackPanel>
+        <StackPanel
+            Style="{DynamicResource Wiersz}"
+            >
+            <Button
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >1</Button>
+            <Button
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >2</Button>
+            <Button
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >3</Button>
+            <Button Click="DziałanieDwuargumentowe">+</Button>
+        </StackPanel>
+        <StackPanel
+            Style="{DynamicResource Wiersz}"
+            >
+            <Button Style="{DynamicResource Cyfra}" Click="ZmianaZnaku">+/-</Button>
+            <Button
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >0</Button>
+            <Button Style="{DynamicResource Cyfra}" Click="Przecinek">,</Button>
+            <Button Background="AliceBlue" Click="RównaSię">=</Button>
+        </StackPanel>
+    </StackPanel>
+</Window>
