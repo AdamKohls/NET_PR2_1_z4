@@ -132,9 +132,74 @@ namespace NET_PR2_1_z4
 				this,
 				new PropertyChangedEventArgs("Działanie")
 				);
-			if (operacja == "+")
-				Wynik = (operandLewy + operandPrawy).ToString();
-			operandLewy = Convert.ToDouble(wynik);
+			switch (operacja)
+			{
+				case "+": Wynik = (operandLewy + operandPrawy).ToString();
+					break;
+				case "-": Wynik = (operandLewy - operandPrawy).ToString();
+					break;
+				case "*": Wynik = (operandLewy * operandPrawy).ToString();
+					break;
+				case "/":
+                    if (operandPrawy == 0)
+                    {
+                        Wynik = "Nie można dzielić przez 0";
+                    }
+                    else
+                    {
+                        Wynik = (operandLewy / operandPrawy).ToString();
+
+                    }
+					break;
+				case "x^2": Wynik = (operandLewy * operandLewy).ToString();
+					break;
+				case "^":
+                    Wynik = Math.Pow((double)operandLewy, (double)operandPrawy).ToString();
+					break;
+				case "mod":
+                    if (operandPrawy == 0)
+					{
+                        return;
+                    }
+                    else
+                    {
+                        Wynik = (operandLewy % operandPrawy).ToString();
+                    }
+					break;
+				case "1/x":
+                    if (operandLewy == 0)
+                    {
+                        Wynik = "Nie można dzielić przez zero";
+                        return;
+                    }
+                    else
+                    {
+                        Wynik = (1.0 / operandLewy).ToString();
+                    }
+					break;
+				case "n!":
+                    double wynik = 1;
+                    for (int i = 1; i <= (int)operandLewy; i++)
+                    {
+                        wynik *= i;
+                    }
+                    Wynik = wynik.ToString();
+					break;
+				case "log":
+                    Wynik = Math.Log10((double)operandLewy).ToString();
+					break;
+				case "log(x)":
+					Wynik = Math.Log((double)operandLewy, (double)(operandPrawy)).ToString();
+					break;
+				case "round up":
+                    Wynik = Math.Ceiling((double)operandLewy).ToString();
+					break;
+				case "round down":
+                    Wynik = Math.Floor((double)operandLewy).ToString();
+					break;
+            }
+
+            operandLewy = Convert.ToDouble(wynik);
 		}
 	}
 }
