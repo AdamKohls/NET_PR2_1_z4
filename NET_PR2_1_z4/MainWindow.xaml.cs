@@ -63,7 +63,13 @@ public partial class MainWindow : Window
 		Kalkulator.WprowadźOperacja(działanie);
 	}
 
-	private void RównaSię(object sender, RoutedEventArgs e)
+    private void DziałanieJednoargumentowe(object sender, RoutedEventArgs e)
+    {
+        DziałanieDwuargumentowe(sender, e);
+        Kalkulator.WykonajDziałanie();
+    }
+
+    private void RównaSię(object sender, RoutedEventArgs e)
 	{
 		Kalkulator.WykonajDziałanie();
 	}

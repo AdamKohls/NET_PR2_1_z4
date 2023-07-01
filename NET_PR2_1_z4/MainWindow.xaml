@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         
         Title="Kalkulator"
-        Height="550"
+        Height="700"
         Width="355"
         FontSize="28"
         >
@@ -34,10 +34,18 @@
         <StackPanel
             Style="{DynamicResource Wiersz}"
             >
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-            <Button>/</Button>
+            <Button Click="DziałanieDwuargumentowe">log(x)</Button>
+            <Button Click="DziałanieDwuargumentowe">^</Button>
+            <Button Click="DziałanieDwuargumentowe">mod</Button>
+            <Button Click="DziałanieDwuargumentowe">/</Button>
+        </StackPanel>
+        <StackPanel
+            Style="{DynamicResource Wiersz}"
+            >
+            <Button Click="DziałanieJednoargumentowe">1/x</Button>
+            <Button Click="DziałanieJednoargumentowe">n!</Button>
+            <Button Click="DziałanieJednoargumentowe">log</Button>
+            <Button Click="DziałanieJednoargumentowe">x^2</Button>
         </StackPanel>
         <StackPanel
             Style="{DynamicResource Wiersz}"
@@ -54,7 +62,7 @@
                 Style="{DynamicResource Cyfra}"
                 Click="Cyfra"
                 >9</Button>
-            <Button>*</Button>
+            <Button Click="DziałanieDwuargumentowe">*</Button>
         </StackPanel>
         <StackPanel
             Style="{DynamicResource Wiersz}"
@@ -71,7 +79,7 @@
                 Style="{DynamicResource Cyfra}"
                 Click="Cyfra"
                 >6</Button>
-            <Button>-</Button>
+            <Button Click="DziałanieDwuargumentowe">-</Button>
         </StackPanel>
         <StackPanel
             Style="{DynamicResource Wiersz}"
@@ -100,6 +108,12 @@
                 >0</Button>
             <Button Style="{DynamicResource Cyfra}" Click="Przecinek">,</Button>
             <Button Background="AliceBlue" Click="RównaSię">=</Button>
+        </StackPanel>
+        <StackPanel
+            Style="{DynamicResource Wiersz}"
+            >
+            <Button Style="{DynamicResource SzerokiButton}" Click="DziałanieJednoargumentowe">round up</Button>
+            <Button Style="{DynamicResource SzerokiButton}" Click="DziałanieJednoargumentowe">round down</Button>
         </StackPanel>
     </StackPanel>
 </Window>
